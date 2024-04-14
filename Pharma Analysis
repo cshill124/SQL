@@ -112,5 +112,14 @@ AND scripts.active = 'y'
 GROUP BY scripts.geo
 ;
 
+#Zonkify is no longer on the market. When were all the Zonkify prescriptions last filled? 
+
+SELECT
+scripts.date_filled
+FROM medication med
+INNER JOIN prescriptions scripts
+ON med.person_ID=scripts.person_ID
+WHERE med.medication_name = 'Zonkify'
+;
 
 
